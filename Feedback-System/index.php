@@ -47,7 +47,7 @@ if (isset($_POST['btn-login'])) {
 
 
     <!-- Plugin CSS -->
-    <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+   <-- <link rel="stylesheet" href="device-mockups/device-mockups.min.css">-->
 
     <!-- Custom styles for this template -->
     <link href="css/new-age.min.css" rel="stylesheet">
@@ -106,8 +106,62 @@ if (isset($_POST['btn-login'])) {
         </div>
       </div>
     </header>
+<section class="download bg-primary text-center" id="download">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+           <div class="signin-form">
 
-    <section class="download bg-primary text-center" id="download">
+	<div class="container">
+     
+        
+       <form class="form-signin" method="post" id="login-form">
+      
+        <h2 class="form-signin-heading">Sign In.</h2><hr />
+        
+        <?php
+		if(isset($msg)){
+			echo $msg;
+		}
+		?>
+        
+        <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email address" name="email" required />
+        <span id="check-e"></span>
+        </div>
+        
+        <div class="form-group">
+        <input type="password" class="form-control" placeholder="Password" name="password" required />
+        </div>
+       
+     	<hr />
+     	
+     	<div class="form-group">
+            	<button type="submit" class="btn btn-block btn-primary" name="btn-login">Sign In</button>
+            </div>
+        
+        <!--<div class="form-group">
+            <button type="submit" class="btn btn-default" name="btn-login" id="btn-login">
+    		<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
+			</button> 
+            
+            <a href="register.php" class="btn btn-default" style="float:right;">Sign UP Here</a>
+            
+        </div>  -->
+        
+        
+      
+      </form>
+
+    </div>
+    
+</div>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+   <section class="download bg-primary text-center" id="download">
       <div class="container">
         <div class="row">
           <div class="col-md-8 mx-auto">
@@ -142,7 +196,7 @@ if (isset($_POST['btn-login'])) {
             	<input type="email" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
                 </div>
                 <span class="text-danger"><?php echo $emailError; ?></span>
-            </div>
+            </div> 
             
             <div class="form-group">
             	<div class="input-group">
@@ -176,57 +230,7 @@ if (isset($_POST['btn-login'])) {
       </div>
     </section>
     
-     <section class="download bg-primary text-center" id="download">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 mx-auto">
-           <div class="signin-form">
-
-	<div class="container">
      
-        
-       <form class="form-signin" method="post" id="login-form">
-      
-        <h2 class="form-signin-heading">Sign In.</h2><hr />
-        
-        <?php
-		if(isset($msg)){
-			echo $msg;
-		}
-		?>
-        
-        <div class="form-group">
-        <input type="email" class="form-control" placeholder="Email address" name="email" required />
-        <span id="check-e"></span>
-        </div>
-        
-        <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" name="password" required />
-        </div>
-       
-     	<hr />
-        
-        <div class="form-group">
-            <button type="submit" class="btn btn-default" name="btn-login" id="btn-login">
-    		<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
-			</button> 
-            
-            <a href="register.php" class="btn btn-default" style="float:right;">Sign UP Here</a>
-            
-        </div>  
-        
-        
-      
-      </form>
-
-    </div>
-    
-</div>
-           
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="features" id="features">
       <div class="container">
@@ -241,37 +245,32 @@ if (isset($_POST['btn-login'])) {
           <br>
           <br>
           <br>
-          <div class="button">
+          <div class="btn btn-block btn-primary">
                 <a href="register.php" class="btn btn-primary btn-lg"> Register </a>
                </div>
+               
       </div>
-    </section>
-
-    <section class="cta">
-      <div class="cta-content">
-        <div class="container">
-          <h2>Stop waiting.<br>Start building.</h2>
-          <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
-        </div>
-      </div>
-      <div class="overlay"></div>
     </section>
 
     <section class="contact bg-primary" id="contact">
       <div class="container">
         <h3><i></i>Working in conjunction with National College of Ireland</i></h3>
-        <ul class="list-inline list-social">
+          <ul class="list-inline list-social">
           <li class="list-inline-item social-twitter">
+            <h6>Twitter</h6>
             <a href="www.twitter.com">
-              <i class="fa fa-twitter"></i>
+               <i class="fa fa-twitter"></i>
+              
             </a>
           </li>
           <li class="list-inline-item social-facebook">
+            <h6>Facebook </h6>
             <a href="www.facebook.com">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li class="list-inline-item social-google-plus">
+            <h6> NCI    </h6>
             <a href="www.google.ie">
               <i class="fa fa-google-plus"></i>
             </a>
