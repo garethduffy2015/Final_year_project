@@ -2,11 +2,23 @@
  
 require 'feedback_connection.php';
 $conn    = Connect();
-$experience    = $conn->real_escape_string($_POST['experience']);
-$comments   = $conn->real_escape_string($_POST['comments']);
-$name   = $conn->real_escape_string($_POST['name']);
+
+
+
+$uno   = $conn->real_escape_string($_POST['uno']);
+$Month1   = $conn->real_escape_string($_POST['Month1']);
+$Month2   = $conn->real_escape_string($_POST['Month2']);
+$Month3   = $conn->real_escape_string($_POST['Month3']);
+$Month4   = $conn->real_escape_string($_POST['Month4']);
+$Month5   = $conn->real_escape_string($_POST['Month5']);
+$Month6   = $conn->real_escape_string($_POST['Month6']);
+$overall   = $conn->real_escape_string($_POST['overall']);
+$comments = $conn->real_escape_string($_POST['comments']);
+$name = $conn->real_escape_string($_POST['name']);
 $email = $conn->real_escape_string($_POST['email']);
-$query   = "INSERT into feedback (experience,comments,name,email) VALUES('" . $experience . "','" . $comments . "','" . $name . "','" . $email . "')";
+
+//$query = "INSERT INTO student_feedback(uno,Month1,Month2,Month3,Month4,Month5,Month6,overall,comments,name,email) VALUES('$uno','$Month1','$Month2','$Month3','$Month4','$Month5','$Month6','$overall','$comments','$name','$email')";
+$query   = "INSERT into student_feedback (uno,Month1,Month2,Month3,Month4,Month5,Month6,overall,comments,name,email) VALUES('" . $uno . "','" . $Month1 . "','" . $Month2 . "','" . $Month3 . "','" . $Month4 . "','" . $Month5 . "','" . $Month6 . "','" . $overall . "','" . $comments . "','" . $name . "','" . $email . "')";
 $success = $conn->query($query);
  
 if (!$success) {

@@ -47,7 +47,7 @@ if (isset($_POST['btn-login'])) {
 
 
     <!-- Plugin CSS -->
-   <-- <link rel="stylesheet" href="device-mockups/device-mockups.min.css">-->
+  <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
 
     <!-- Custom styles for this template -->
     <link href="css/new-age.min.css" rel="stylesheet">

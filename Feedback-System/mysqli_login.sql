@@ -28,12 +28,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `tbl_users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(60) NOT NULL,
-  `studentno` varchar(60) NOT NULL,
+  `first_name` varchar(60) NOT NULL,
+  `surname` varchar(60) NOT NULL,
+  `studentno` varchar(60),
+  `radio` varchar(10) NOT NULL,
   `email` varchar(60) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`user_id`),
-  UNIQUE KEY `email` (`email`)
+  UNIQUE KEY `studentno` (`studentno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

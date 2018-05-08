@@ -37,7 +37,7 @@ mysql_select_db('product',mysql_connect('localhost','root',''))or die(mysql_erro
     motorcycle_chart.data = [
     <?php
     $query = mysql_query("select * from product") or die(mysql_error());
-    while ($row = mysql_fetch_array($query)) {
+    while ($row = mysql_fetch_array($result)) {
         ?>
         <?php echo $row['Qty'] . ','; ?>	
     <?php }; ?>
@@ -46,7 +46,7 @@ mysql_select_db('product',mysql_connect('localhost','root',''))or die(mysql_erro
     motorcycle_chart.labels = [
     <?php
     $query = mysql_query("select * from product") or die(mysql_error());
-    while ($row = mysql_fetch_array($query)) {
+    while ($row = mysql_fetch_array($result)) {
         ?>
         <?php echo "'" . $row['name'] . "'" . ','; ?>	
     <?php }; ?>
@@ -57,7 +57,7 @@ mysql_select_db('product',mysql_connect('localhost','root',''))or die(mysql_erro
     motorcycle_chart.animationFrames = 30;
     motorcycle_chart.draw();
 </script>
-                        </div>
+                        </div>             
                     </div>
                 </div>
             </div>

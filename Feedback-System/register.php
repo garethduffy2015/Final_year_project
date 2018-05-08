@@ -8,13 +8,17 @@ $error = false;
 
 if(isset($_POST['btn-signup'])) {
 	
-	$uname = strip_tags($_POST['username']);
+	$uname = strip_tags($_POST['first_name']);
+	$surname = strip_tags($_POST['surname']);
 	$uno = strip_tags($_POST['studentno']);
+	$radio = strip_tags($_POST['radio']);
 	$email = strip_tags($_POST['email']);
 	$upass = strip_tags($_POST['password']);
 	
 	$uname = $DBcon->real_escape_string($uname);
+	$surname = $DBcon->real_escape_string($surname);
 	$uno = $DBcon->real_escape_string($uno);
+	$radio = $DBcon->real_escape_string($radio);
 	$email = $DBcon->real_escape_string($email);
 	$upass = $DBcon->real_escape_string($upass);
 	
@@ -25,7 +29,7 @@ if(isset($_POST['btn-signup'])) {
 	
 	if ($count==0) {
 		
-		$query = "INSERT INTO tbl_users(username,studentno,email,password) VALUES('$uname','$uno','$email','$hashed_password')";
+		$query = "INSERT INTO tbl_users(first_name,surname,studentno,radio,email,password) VALUES('$uname','$surname','$uno','$radio','$email','$hashed_password')";
 
 		if ($DBcon->query($query)) {
 			$msg = "<div class='alert alert-success'>
@@ -134,13 +138,32 @@ if(isset($_POST['btn-signup'])) {
 		?>
           
         <div class="form-group">
-        <input type="text" class="form-control" placeholder="Username" name="username" required  />
+        <input type="text" class="form-control" placeholder="First Name" name="first_name" required  />
         </div>
         
         <div class="form-group">
-        <input type="text" class="form-control" placeholder="Student No" name="studentno" required  />
+        <input type="text" class="form-control" placeholder="Surname" name="surname" required  />
         </div>
         
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="Student No" name="studentno"/>
+        </div>
+        
+        <div class="form-group" style="margin: 0; display: block; text-align: right;">
+        <input  style="vertical-align: top;" type="radio" class="form-control"  name="radio" value="Student"  > Student
+        
+        <input type="radio" class="form-control"  name="radio" value="Staff"  > Staff
+        </div>
+       
+       
+      <!-- <form>
+            <div class="form-group">
+            
+            <input type="radio" name="radio" value="male"  > Male<br>
+            <input type="radio" name="radio" value="female"> Female<br>
+            </div>
+        </form> -->
+
         <div class="form-group">
         <input type="email" class="form-control" placeholder="Email address" name="email" required  />
         <span id="check-e"></span>

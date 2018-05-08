@@ -1,9 +1,9 @@
 <?php
 header('Content-Type: application/json');
 
-$conn = mysqli_connect("localhost","root","","phpsamples");
+$conn = mysqli_connect("localhost","root","","feedback");
 
-$sqlQuery = "SELECT student_id,student_name,marks FROM tbl_marks ORDER BY student_id";
+$sqlQuery = "SELECT uno,overall FROM student_feedback";
 
 $result = mysqli_query($conn,$sqlQuery);
 
