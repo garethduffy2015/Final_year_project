@@ -11,14 +11,12 @@ if(isset($_POST['btn-signup'])) {
 	$uname = strip_tags($_POST['first_name']);
 	$surname = strip_tags($_POST['surname']);
 	$uno = strip_tags($_POST['studentno']);
-	$radio = strip_tags($_POST['radio']);
 	$email = strip_tags($_POST['email']);
 	$upass = strip_tags($_POST['password']);
 	
 	$uname = $DBcon->real_escape_string($uname);
 	$surname = $DBcon->real_escape_string($surname);
 	$uno = $DBcon->real_escape_string($uno);
-	$radio = $DBcon->real_escape_string($radio);
 	$email = $DBcon->real_escape_string($email);
 	$upass = $DBcon->real_escape_string($upass);
 	
@@ -29,7 +27,7 @@ if(isset($_POST['btn-signup'])) {
 	
 	if ($count==0) {
 		
-		$query = "INSERT INTO tbl_users(first_name,surname,studentno,radio,email,password) VALUES('$uname','$surname','$uno','$radio','$email','$hashed_password')";
+		$query = "INSERT INTO tbl_users(first_name,surname,studentno,email,password) VALUES('$uname','$surname','$uno','$email','$hashed_password')";
 
 		if ($DBcon->query($query)) {
 			$msg = "<div class='alert alert-success'>
@@ -63,23 +61,19 @@ if(isset($_POST['btn-signup'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>WPF</title>
+    
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
 
     <!-- Custom styles for this template -->
     <link href="css/new-age.min.css" rel="stylesheet">
+    
+    <title>Feedback System</title>
 
   </head>
 
@@ -87,23 +81,27 @@ if(isset($_POST['btn-signup'])) {
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Work Placement Feedback</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu
+          <i class="fa fa-bars"></i> </button>
+       
         <div class="collapse navbar-collapse" id="navbarResponsive">
+          
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="index.php">Mainpage</a>
             </li>
+            
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="index.php">Login</a>
             </li>
+            
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
+         
           </ul>
         </div>
       </div>
@@ -119,95 +117,74 @@ if(isset($_POST['btn-signup'])) {
           </div>
           <div class="signin-form">
 
-	<div class="container">
-	  <br>
-	  <br>
-	   <br>
-	  <br> <br>
-	  <br> <br>
-	  <br> <br>
+	  <div class="container">
+	    <br> <br> <br> <br> <br> <br> <br> <br> <br>
 
-       <form class="form-signin" method="post" id="register-form">
+         <form class="form-signin" method="post" id="register-form">
       
-        <h2 class="form-signin-heading">Sign Up</h2><hr />
+            <h2 class="form-signin-heading">Sign Up</h2><hr />
         
         <?php
-		if (isset($msg)) {
-			echo $msg;
-		}
-		?>
+	      	if (isset($msg)) {
+		      	echo $msg;
+	      	}
+		      ?>
           
         <div class="form-group">
-        <input type="text" class="form-control" placeholder="First Name" name="first_name" required  />
+          <input type="text" class="form-control" placeholder="First Name" name="first_name" required  />
         </div>
         
         <div class="form-group">
-        <input type="text" class="form-control" placeholder="Surname" name="surname" required  />
+          <input type="text" class="form-control" placeholder="Surname" name="surname" required  />
         </div>
         
         <div class="form-group">
-        <input type="text" class="form-control" placeholder="Student No" name="studentno"/>
-        </div>
-        
-        <div class="form-group" style="margin: 0; display: block; text-align: right;">
-        <input  style="vertical-align: top;" type="radio" class="form-control"  name="radio" value="Student"  > Student
-        
-        <input type="radio" class="form-control"  name="radio" value="Staff"  > Staff
-        </div>
-       
-       
-      <!-- <form>
-            <div class="form-group">
-            
-            <input type="radio" name="radio" value="male"  > Male<br>
-            <input type="radio" name="radio" value="female"> Female<br>
-            </div>
-        </form> -->
-
-        <div class="form-group">
-        <input type="email" class="form-control" placeholder="Email address" name="email" required  />
-        <span id="check-e"></span>
+          <input type="text" class="form-control" placeholder="Student No" name="studentno" required/>
         </div>
         
         <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password" name="password" required  />
+          <input type="email" class="form-control" placeholder="Email address" name="email" required  />
+          <span id="check-e"></span>
+        </div>
+        
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" name="password" required  />
         </div>
         
      	<hr />
         
         <div class="form-group">
             <button type="submit" class="btn btn-default" name="btn-signup">
-    		<span class="glyphicon glyphicon-log-in"></span> &nbsp; Create Account
-			</button> 
-            <a href="index.php" class="btn btn-default" style="float:right;">Log In Here</a>
+    	      	<span class="glyphicon glyphicon-log-in"></span> &nbsp; Create Account
+			        </button> 
+                <a href="index.php" class="btn btn-default" style="float:right;">Log In Here</a>
         </div> 
       
-      </form>
-
-    </div>
-    
-</div>
-         
+            </form>
           </div>
-        </div>
       </div>
-    </header>
-     <footer>
+         
+     </div>
+   </div>
+  </div>
+ </header>
+ 
+      <footer>
       <div class="container">
-        <p>&copy; 2017 Gareth Duffy. All Rights Reserved.</p>
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <a href="#">Privacy</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">Terms</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">FAQ</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
-</body>
+        <p>&copy; 2018 Gareth Duffy. All Rights Reserved.</p>
+          </div>
+            </footer>
+            
+     <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/new-age.min.js"></script>
+    
+  </body>
 </html>
 <?php ob_end_flush(); ?>

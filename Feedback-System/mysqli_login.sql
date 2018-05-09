@@ -31,11 +31,21 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   `first_name` varchar(60) NOT NULL,
   `surname` varchar(60) NOT NULL,
   `studentno` varchar(60),
-  `radio` varchar(10) NOT NULL,
   `email` varchar(60) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `studentno` (`studentno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `tbl_admin` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(60) NOT NULL,
+  `surname` varchar(60) NOT NULL,
+  `staffid` varchar(60),
+  `email` varchar(60) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `staffid` (`staffid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -14,6 +14,7 @@ if (isset($_POST['btn-login'])) {
 	$password = $DBcon->real_escape_string($password);
 	
 	$query = $DBcon->query("SELECT * FROM tbl_users WHERE email='$email'");
+	$query = $DBcon->query("SELECT * FROM tbl_admin WHERE email='$email'");
 	$row=$query->fetch_array();
 	
 	$count = $query->num_rows; // if email/password are correct returns must be 1 row
@@ -39,42 +40,62 @@ if (isset($_POST['btn-login'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>WPF</title>
-
-    <!-- Bootstrap core CSS -->
+   <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/new-age.css" rel="stylesheet">
 
+  <!-- Plugin CSS -->
+    <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
 
-    <!-- Plugin CSS -->
-  <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
-
-    <!-- Custom styles for this template -->
+  <!-- Custom styles for this template -->
     <link href="css/new-age.min.css" rel="stylesheet">
 
+
+    <title>Feedback System</title>
+    
+     <style type="text/css">
+
+	#register1 {
+			           float: left;
+                 width: 50%;
+                 height: 50%;
+}
+    #register2 {
+                 float: right;
+                 width: 50%;
+                 height: 50%;
+                
+}
+</style>
+  
   </head>
 
   <body id="page-top">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      
       <div class="container">
+        
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Work Placement Feedback</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu
+          <i class="fa fa-bars"></i> </button>
+        
         <div class="collapse navbar-collapse" id="navbarResponsive">
+          
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#download">Login</a>
             </li>
+            
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#features">Register</a>
             </li>
+            
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
+            
           </ul>
         </div>
       </div>
@@ -85,45 +106,53 @@ if (isset($_POST['btn-login'])) {
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
+              
               <h1 class="mb-5">National College of Ireland Work Placement Feedback System.</h1>
               <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Login</a>
+            
             </div>
           </div>
+          
           <div class="col-lg-5 my-auto">
             <div class="device-container">
               
                 <div class="device">
                   <div class="screen">
-                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                    <!--image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
                     <img src="img/NCI_COLOUR.png" class="img-fluid" alt="">
                   </div>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
                   </div>
                 </div>
+                
             </div>
           </div>
         </div>
       </div>
     </header>
-<section class="download bg-primary text-center" id="download">
+    
+    
+    <section class="download bg-primary text-center" id="download">
       <div class="container">
         <div class="row">
           <div class="col-md-8 mx-auto">
            <div class="signin-form">
-
-	<div class="container">
-     
+             	<div class="container">
+     <br>
+     <br>
+     <br>
+     <br>
         
-       <form class="form-signin" method="post" id="login-form">
+           <form class="form-signin" method="post" id="login-form">
       
-        <h2 class="form-signin-heading">Sign In.</h2><hr />
+              <h2 class="form-signin-heading">Sign In.</h2><hr />
         
-        <?php
-		if(isset($msg)){
-			echo $msg;
-		}
-		?>
+                   <?php
+	                	if(isset($msg)){
+		                	echo $msg;
+	                   	}
+	                     ?>
         
         <div class="form-group">
         <input type="email" class="form-control" placeholder="Email address" name="email" required />
@@ -134,167 +163,103 @@ if (isset($_POST['btn-login'])) {
         <input type="password" class="form-control" placeholder="Password" name="password" required />
         </div>
        
-     	<hr />
+         	<hr />
      	
      	<div class="form-group">
             	<button type="submit" class="btn btn-block btn-primary" name="btn-login">Sign In</button>
             </div>
-        
-        <!--<div class="form-group">
-            <button type="submit" class="btn btn-default" name="btn-login" id="btn-login">
-    		<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In
-			</button> 
-            
-            <a href="register.php" class="btn btn-default" style="float:right;">Sign UP Here</a>
-            
-        </div>  -->
-        
-        
       
       </form>
+      
+      <br>
+      <br>
+      <br>
+      <br>
 
-    </div>
-    
-</div>
-           
-          </div>
-        </div>
-      </div>
-    </section>
-   <section class="download bg-primary text-center" id="download">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 mx-auto">
-           <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-    
-    	<div class="col-md-12">
-        
-        	<div class="form-group">
-            	<h2 class="">Sign In.</h2>
             </div>
-        
-        	<div class="form-group">
-            	<hr />
-            </div>
-            
-            <?php
-			if ( isset($errMSG) ) {
-				
-				?>
-				<div class="form-group">
-            	<div class="alert alert-danger">
-				<span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
-                </div>
-            	</div>
-                <?php
-			}
-			?>
-            
-            <div class="form-group">
-            	<div class="input-group">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            	<input type="email" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
-                </div>
-                <span class="text-danger"><?php echo $emailError; ?></span>
-            </div> 
-            
-            <div class="form-group">
-            	<div class="input-group">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-            	<input type="password" name="pass" class="form-control" placeholder="Your Password" maxlength="15" />
-                </div>
-                <span class="text-danger"><?php echo $passError; ?></span>
-            </div>
-            
-            <div class="form-group">
-            	<hr />
-            </div>
-            
-            <div class="form-group">
-            	<button type="submit" class="btn btn-block btn-primary" name="btn-login">Sign In</button>
-            </div>
-            
-            <div class="form-group">
-            	<hr />
-            </div>
-            
-            <div class="form-group">
-            	<a href="register.php">Sign Up Here...</a>
-            </div>
-        
-        </div>
-   
-    </form>
-          </div>
+           </div>
+         </div>
         </div>
       </div>
     </section>
     
-     
-
-    <section class="features" id="features">
+     <section class="download bg-primary text-center" id="features">
       <div class="container">
-        <div class="section-heading text-center">
-          <h2>Register here</h2>
-          <br>
-          <br>
-          <br>
-          <br>
-          <p class="text-muted">Registration is quick and easy</p>
+       
           
+             	<div class="container">
+     <br>
+         <h2 class="form-signin-heading">Register.</h2><hr />
+         <br>
+         <br>
+         <p class="text-muted">Registration is quick and easy</p>
+        
+        <br>
           <br>
           <br>
-          <br>
-          <div class="btn btn-block btn-primary">
-                <a href="register.php" class="btn btn-primary btn-lg"> Register </a>
-               </div>
-               
+           <div id="register1">
+                <a href="register.php" class="btn btn-primary btn-lg"> Student Registration </a> 
+                </div>
+                <div id="register2">
+                  <a href="registeradmin.php" class="btn btn-primary btn-lg"> Staff Registration </a>
+                </div>
+         <br>
+         <br>
+         <br>
+            
+           
+        
       </div>
     </section>
+  
+    
+   
 
     <section class="contact bg-primary" id="contact">
       <div class="container">
+        <br>
+        <br>
         <h3><i></i>Working in conjunction with National College of Ireland</i></h3>
+          <br>
+          <br>
           <ul class="list-inline list-social">
-          <li class="list-inline-item social-twitter">
-            <h6>Twitter</h6>
-            <a href="www.twitter.com">
-               <i class="fa fa-twitter"></i>
-              
-            </a>
-          </li>
-          <li class="list-inline-item social-facebook">
-            <h6>Facebook </h6>
-            <a href="www.facebook.com">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-google-plus">
-            <h6> NCI    </h6>
-            <a href="www.google.ie">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
+              <li class="list-inline-item social-twitter">
+                <h6>Twitter</h6>
+                  <a href="https://twitter.com/?lang=en">
+                    <br>
+                     <i class="fa fa-twitter"></i>
+                      </a>
+                        </li>
+          
+              <li class="list-inline-item social-facebook">
+                <h6>Facebook </h6>
+                  <a href="https://www.facebook.com/">
+                    <br>
+                    <i class="fa fa-facebook"></i>
+                      </a>
+                        </li>
+                        
+              <li class="list-inline-item social-google-plus">
+                <h6> NCI    </h6>
+                  <a href="https://www.ncirl.ie/">
+                    <br>
+                    <i class="fa fa-google-plus"></i>
+                      </a>
+                        </li>
+                        
         </ul>
+        <br>
+        <br>
+        <br>
+        <br>
       </div>
     </section>
 
     <footer>
       <div class="container">
-        <p>&copy; 2017 Gareth Duffy. All Rights Reserved.</p>
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <a href="#">Privacy</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">Terms</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">FAQ</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+        <p>&copy; 2018 Gareth Duffy. All Rights Reserved.</p>
+          </div>
+            </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
