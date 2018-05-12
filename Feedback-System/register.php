@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 
-require_once 'dbconnect.php';
+require_once 'db-configs/dbconnect.php';
 
 $error = false;
 
@@ -31,11 +31,11 @@ if(isset($_POST['btn-signup'])) {
 
 		if ($DBcon->query($query)) {
 			$msg = "<div class='alert alert-success'>
-						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; successfully registered !
+						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; successfully registered.
 					</div>";
 		}else {
 			$msg = "<div class='alert alert-danger'>
-						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; error while registering !
+						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; error while registering.
 					</div>";
 		}
 		
@@ -43,12 +43,10 @@ if(isset($_POST['btn-signup'])) {
 		
 		
 		$msg = "<div class='alert alert-danger'>
-					<span class='glyphicon glyphicon-info-sign'></span> &nbsp; sorry email already taken !
+					<span class='glyphicon glyphicon-info-sign'></span> &nbsp; sorry email already taken.
 				</div>";
 			
 	}
-	
-
 }
 ?>
 <!DOCTYPE html>
@@ -60,7 +58,7 @@ if(isset($_POST['btn-signup'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     
 
     <!-- Bootstrap core CSS -->
@@ -85,106 +83,97 @@ if(isset($_POST['btn-signup'])) {
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Work Placement Feedback</a>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu
-          <i class="fa fa-bars"></i> </button>
+            <i class="fa fa-bars"></i> </button>
        
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+              <div class="collapse navbar-collapse" id="navbarResponsive">
           
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index.php">Mainpage</a>
-            </li>
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="index.php">Mainpage</a>
+                  </li>
             
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index.php">Login</a>
-            </li>
+                  <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="index.php">Login</a>
+                  </li>
             
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
+                  <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="contact.php">Contact</a>
+                  </li>
          
-          </ul>
-        </div>
+                </ul>
+              </div>
       </div>
     </nav>
 
     <header class="masthead">
       <div class="container h-100">
         <div class="row h-100">
-          <div class="col-lg-7 my-auto">
-            <div class="header-content mx-auto">
-              <h1 class="mb-5">National College of Ireland Work Placement Feedback System.</h1>
-            </div>
-          </div>
-          <div class="signin-form">
-
-	  <div class="container">
-	    <br> <br> <br> <br> <br> <br> <br> <br> <br>
-
-         <form class="form-signin" method="post" id="register-form">
-      
-            <h2 class="form-signin-heading">Sign Up</h2><hr />
-        
-        <?php
-	      	if (isset($msg)) {
-		      	echo $msg;
-	      	}
-		      ?>
           
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="First Name" name="first_name" required  />
-        </div>
-        
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Surname" name="surname" required  />
-        </div>
-        
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Student No" name="studentno" required/>
-        </div>
-        
-        <div class="form-group">
-          <input type="email" class="form-control" placeholder="Email address" name="email" required  />
-          <span id="check-e"></span>
-        </div>
-        
-        <div class="form-group">
-          <input type="password" class="form-control" placeholder="Password" name="password" required  />
-        </div>
-        
-     	<hr />
-        
-        <div class="form-group">
-            <button type="submit" class="btn btn-default" name="btn-signup">
-    	      	<span class="glyphicon glyphicon-log-in"></span> &nbsp; Create Account
-			        </button> 
-                <a href="index.php" class="btn btn-default" style="float:right;">Log In Here</a>
-        </div> 
-      
-            </form>
+          <div class="col-lg-7 my-auto">
+              <div class="header-content mx-auto">
+                <h1 class="mb-5">National College of Ireland Work Placement Feedback System.</h1>
+              </div>
           </div>
+          
+          
+          <div class="signin-form">
+            <div class="container">
+	            <br> <br> <br> <br> <br> <br> 
+
+                 <form class="form-signin" method="post" id="register-form">
+      
+                    <h2 class="form-signin-heading">Registration</h2><hr />
+        
+                       <?php
+	      	                if (isset($msg)) {
+		      	              echo $msg;
+	                      	}
+		                    ?>
+          
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="First Name" name="first_name" required  />
+                      </div> <br>
+                              
+                       <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Surname" name="surname" required  />
+                      </div> <br>
+        
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Student/Staff Number" name="studentno"/>
+                      </div>  <br>
+       
+                      <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email address" name="email" required  />
+                          <span id="check-e"></span>
+                      </div> <br>
+        
+                      <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" name="password" minlength="6" required  />
+                      </div>
+        
+                     	<hr /> <br>
+        
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-default" name="btn-signup">
+    	                  	<span class="glyphicon glyphicon-log-in"></span> &nbsp; Create Account
+			                  </button> 
+                          <a href="index.php" class="btn btn-default" style="float:right;">Log In Here</a>
+                      </div> 
+                        <br> <br> <br> <br> <br>
+     
+                  </form>
+                </div>
+            </div>
+         </div>
       </div>
-         
-     </div>
-   </div>
   </div>
- </header>
+</header>
  
-      <footer>
+<footer>
       <div class="container">
         <p>&copy; 2018 Gareth Duffy. All Rights Reserved.</p>
           </div>
             </footer>
-            
-     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/new-age.min.js"></script>
-    
-  </body>
+ </body>
 </html>
 <?php ob_end_flush(); ?>

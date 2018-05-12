@@ -1,14 +1,4 @@
-<?php
-	include('conn.php');
-	session_start();
-	if (!isset($_SESSION['userid']) ||(trim ($_SESSION['userid']) == '')) {
-	header('location:index.php');
-    exit();
-	}
-	
-	$uquery=mysqli_query($conn,"select * from `user` where userid='".$_SESSION['userid']."'");
-	$urow=mysqli_fetch_assoc($uquery);
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +6,7 @@
 </head>
 <body>
 <div>
-	<h4>Welcome, <?php echo $urow['your_name']; ?> <a href="logout.php">Logout</a></h4>
+	<h4>Welcome <a href="logout.php">Logout</a></h4>
 	<?php
 		$query=mysqli_query($conn,"select * from `chat_room`");
 		while($row=mysqli_fetch_array($query)){

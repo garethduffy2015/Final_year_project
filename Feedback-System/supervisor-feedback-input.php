@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -53,55 +54,55 @@
       </div>
     </nav>
 
-    <header class="masthead">
+    <header class="masthead" style="height:auto;">
       <div class="container h-100">
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
             
             <form action="thankyou.php" method="post">
-               
+               <br><br>
                 <div class="row">
                  <div class="col-sm-6 form-group">
-                    <label for="studentno"> Student Number (No X):</label>
-                    <input type="text" class="form-control" id="uno" name="uno" required>
+                    <label for="studentno"> Student Number:</label>
+                    <input type="text" class="form-control"name="uno">
                       </div>
                         </div>
                  
                 <div class="row">
                   <div class="col-sm-6 form-group">
                     <label for="Month1"> Month 1 Grade:</label>
-                    <input type="int" class="form-control" id="Month1" name="Month1" required>
+                    <input type="int" class="form-control" name="Month1">
                        </div>
                             
                 <div class="col-sm-6 form-group">
                   <label for="Month2"> Month 2 Grade:</label>
-                  <input type="int" class="form-control" id="Month2" name="Month2" required>
+                  <input type="int" class="form-control" name="Month2">
                     </div>
                             
                 <div class="col-sm-6 form-group">
                   <label for="Month3"> Month 3 Grade:</label>
-                  <input type="int" class="form-control" id="Month3" name="Month3" required>
+                  <input type="int" class="form-control" name="Month3">
                     </div>
                     
                 <div class="col-sm-6 form-group">
                   <label for="Month4"> Month 4 Grade:</label>
-                  <input type="int" class="form-control" id="Month4" name="Month4" required>
+                  <input type="int" class="form-control" name="Month4">
                     </div>
                        
                 <div class="col-sm-6 form-group">
                   <label for="Month5"> Month 5 Grade:</label>
-                  <input type="int" class="form-control" id="Month5" name="Month5" required>
+                  <input type="int" class="form-control" name="Month5">
                     </div>
                        
                <div class="col-sm-6 form-group">
                   <label for="Month6"> Month 6 Grade:</label>
-                  <input type="int" class="form-control" id="Month6" name="Month6" required>
+                  <input type="int" class="form-control" name="Month6">
                      </div>
                             
                <div class="col-sm-6 form-group">
                   <label for="overall"> Overall Grade:</label>
-                  <input type="int" class="form-control" id="overall" name="overall" required>
+                  <input type="int" class="form-control" id="overall" name="overall">
                      </div>
                             
                 <div class="col-sm-12 form-group">
@@ -111,17 +112,15 @@
 
                  <div class="col-sm-6 form-group">
                    <label for="name"> Your Name:</label>
-                   <input type="text" class="form-control" id="name" name="name" required>
+                   <input type="text" class="form-control" name="name">
                       </div>
                             
                  <div class="col-sm-6 form-group">
                     <label for="email"> Your Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                    <input type="email" class="form-control" name="email">
                       </div>
-                       
-                 <div class="col-sm-12 form-group">
-                   <button type="submit" class="btn btn-block btn-primary"  name="btn-postfeedback">Post</button>
-                      </div>
+                    
+                    <input class="btn btn-block btn-primary" type="submit"  name="submit" type="submit" value="Insert">   
                   
                 </div>
               </form>
@@ -132,3 +131,4 @@
     </header>
   </body>
 </html>
+

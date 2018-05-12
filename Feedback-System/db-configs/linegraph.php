@@ -16,7 +16,9 @@ if(!$mysqli){
 }
 
 //query to get data from the table
-$query = sprintf("SELECT uno,Month1,Month2,Month3,Month4,Month5,Month6 FROM student_feedback");
+$query = sprintf("SELECT uno,Month1,Month2,Month3,Month4,Month5,Month6  from student_feedback  ");
+				  
+							
 
 //execute query
 $result = $mysqli->query($query);

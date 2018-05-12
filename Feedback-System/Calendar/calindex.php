@@ -1,15 +1,27 @@
-<?php
-//index.php
-
-
-
-
-?>
 <!DOCTYPE html>
-<html>
- <head>
-  <title>Jquery Fullcalandar Integration with PHP and Mysql</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+   <!-- Bootstrap core CSS -->
+    <link href="/Feedback-System/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Feedback-System/css/new-age.css" rel="stylesheet">
+
+  <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/Feedback-System/device-mockups/device-mockups.min.css">
+
+  <!-- Custom styles for this template -->
+    <link href="/Feedback-System/css/new-age.min.css" rel="stylesheet">
+
+
+    <title>Feedback System</title>
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -105,14 +117,50 @@
   });
    
   </script>
- </head>
- <body>
-  <br />
-  <h2 align="center"><a href="#">Jquery Fullcalandar Integration with PHP and Mysql</a></h2>
-  <br />
+  
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" <body style="background-color:#983a78;">
+      
+      <div class="container">
+        
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Work Placement Feedback &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp CALENDAR</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu
+          
+          <i class="fa fa-bars"></i> </button>
+        
+        <div class="collapse navbar-collapse" id="navbarResponsive" >
+          
+          <ul class="navbar-nav ml-auto" >
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" style="font-size:15px; color:#fdcc52;" href="home.php">Back</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" style="font-size:15px; color:#fdcc52;" href="home.php">Homepage</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" style="font-size:15px; color:#fdcc52;" href="logout.php?logout">Logout</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <br>
+  <br>
+  <br>
   <div class="container">
    <div id="calendar"></div>
   </div>
- </body>
+
+   
+  </body>
+
 </html>
 <?php ob_end_flush(); ?>

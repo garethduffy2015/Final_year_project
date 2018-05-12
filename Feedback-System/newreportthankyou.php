@@ -1,30 +1,23 @@
 <?php
-$connection = mysql_connect("localhost", "root", ""); // Establishing Connection with Server
-$db = mysql_select_db("feedback", $connection); // Selecting Database from Server
-if(isset($_POST['submit'])){ // Fetching variables of the form which travels in URL
-$uno = $_POST['uno'];
-$Month1 = $_POST['Month1'];
-$Month2 = $_POST['Month2'];
-$Month3 = $_POST['Month3'];
-$Month4 = $_POST['Month4'];
-$Month5 = $_POST['Month5'];
-$Month6 = $_POST['Month6'];
-$overall = $_POST['overall'];
-$comments = $_POST['comments'];
-$name = $_POST['name'];
-$email = $_POST['email'];
-if($name !=''||$email !=''){
-//Insert Query of SQL
-$query = mysql_query("insert into student_feedback(uno,Month1,Month2,Month3,Month4,Month5,Month6,overall,comments,name,email) VALUES('" . $uno . "','" . $Month1 . "','" . $Month2 . "','" . $Month3 . "','" . $Month4 . "','" . $Month5 . "','" . $Month6 . "','" . $overall . "','" . $comments . "','" . $name . "','" . $email . "')");
-//echo "<br/><br/><span>Data Inserted successfully...!!</span>";
-}
-else{
-//echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
-}
-}
-mysql_close($connection); // Closing Connection with Server
-?>
+if(isset($_POST["submit"]))
+{
+ 
+ //Including dbconfig file.
+ //THIS WORKS WITH DB CONFIG.PHP
+include 'db-configs/dbconfig.php';
+ 
+$uno=$_POST["uno"];
+$fullname=$_POST["fullname"];
+$email=$_POST["email"];
+$month=$_POST["month"];
+$message=$_POST["message"];
+$comments=$_POST["comments"];
 
+mysql_query("INSERT INTO newreport (uno, fullname, email, month, message,comments) VALUES ('$uno','$fullname','$email','$month','$message','$comments')"); 
+
+}
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,7 +76,7 @@ mysql_close($connection); // Closing Connection with Server
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
               
-              <h1 class="mb-5">Your Feedback was Submitted.</h1>
+              <h1 class="mb-5">Your Monthly Report has been submitted.</h1>
               
                 <a href="home.php" class="mybutton">Home</a>
            
@@ -99,5 +92,4 @@ mysql_close($connection); // Closing Connection with Server
         </div>
       </div>
     </header>
-   </body>
-   </html>
+   

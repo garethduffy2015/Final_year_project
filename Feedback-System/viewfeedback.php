@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    
    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/new-age.css" rel="stylesheet">
@@ -110,7 +111,7 @@ tbody td:hover:before {
   <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color:#b92f55;">
       
       <div class="container">
         
@@ -138,17 +139,13 @@ tbody td:hover:before {
       </div>
     </nav>
 
-    <header class="masthead">
+     <section class="download bg-primary text-center" id="features">
     
 
-    <br>
-     <br>
-     <br>
-     <br><br>
-     
-       <div id="chart-container">
+    <br><br>
+    <div id="chart-container">
         <canvas id="graphCanvas"></canvas>
-    </div>
+            </div>
 
     <script>
         $(document).ready(function () {
@@ -159,7 +156,7 @@ tbody td:hover:before {
         function showGraph()
         {
             {
-                $.post("data.php",
+                $.post("/Feedback-System/db-configs/data.php",
                 function (data)
                 {
                     console.log(data);
@@ -175,11 +172,11 @@ tbody td:hover:before {
                         labels: uno,
                         datasets: [
                             {
-                                label: 'Student Total Marks',
-                                backgroundColor: '#cebd39',
+                                label: 'Student Overall Marks',
+                                backgroundColor: '##C0C0C0',
                                 borderColor: '#ffffff',
-                                hoverBackgroundColor: '#cebd39',
-                                hoverBorderColor: '#cebd39',
+                                hoverBackgroundColor: '##C0C0C0',
+                                hoverBorderColor: '##C0C0C0',
                                 data: overall
                             }
                         ]
@@ -199,14 +196,11 @@ tbody td:hover:before {
         </script> 
                 
      
-    </header>
+    </section>
     
     
    
-  
-     
-
-    <section class="graph">
+   <section class="graph">
     
     	<div id="linegraph1">
 			<canvas id="mycanvas"></canvas>
@@ -215,7 +209,7 @@ tbody td:hover:before {
 		<script>
 			$(document).ready(function(){
 	$.ajax({
-		url : "linegraph.php",
+		url : "/Feedback-System/db-configs/linegraph.php",
 		type : "GET",
 		success : function(data){
 			console.log(data);
@@ -283,6 +277,7 @@ tbody td:hover:before {
 			
 		</script>
 		
+		
 		<div id="linegraph2">
 			<canvas id="mycanvas2"></canvas>
 		</div>
@@ -290,7 +285,7 @@ tbody td:hover:before {
 		<script>
 			$(document).ready(function(){
 	$.ajax({
-		url : "linegraph.php",
+		url : "/Feedback-System/db-configs/linegraph.php",
 		type : "GET",
 		success : function(data){
 			console.log(data);
@@ -357,24 +352,14 @@ tbody td:hover:before {
 });
 			
 		</script>
-		<br>
-     <br>
-     <br>
-     <br><br><br>
-     <br>
-     <br>
-     <br>
-     <br>
-     <br><br><br>
-     <br>
-     <br>
-     
+	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>
+		<br>	<br>	<br>	<br>	<br>	<br>	<br>
 </section>
 
     
  <section class="download bg-primary text-center" id="download">
      
-      <h2 class="form-signin-heading">View details of your Feedback below.</h2><hr />
+      <h2 class="form-signin-heading">View a Breakdown of your Marks</h2><hr />
       
       <br><br>
        
